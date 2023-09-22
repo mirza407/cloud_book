@@ -1,24 +1,6 @@
-# Project Description
-
-Laravel Framework 8.83.27
-
-PHP >= 7.4.3-4
-
-Composer version 2.5.8
-
-# Project Name
+# Cloud Book
 
 Welcome to the Cloud Books This Laravel-based project allows you to create and manage sections, subsections, and assign roles such as author and collaborator.
-
-## Table of Contents
-- [Getting Started]
-  - [Prerequisites]
-  - [Installation]
-- [Usage]
-  - [Creating Sections and Subsections](
-  - [Assigning Roles]
-- [Contributing]
-- [License]
 
 ## Getting Started
 

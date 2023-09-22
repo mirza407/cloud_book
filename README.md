@@ -1,4 +1,4 @@
-#project Description
+# Project Description
 
 Laravel Framework 8.83.27
 
@@ -34,7 +34,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/project-name.git
+   git clone https://github.com/mirza407/cloud_book.git
    
 2.  Navigate to the project directory:
 	cd project-name
@@ -50,17 +50,15 @@ Before you begin, ensure you have met the following requirements:
 	php artisan serve
 	
 	The application should now be running. You can access it at http://localhost:8000
-	
-	
+		
 ### Usage 
 - Creating Sections and Subsections
 - Log in as an administrator or a user with the necessary permissions.
 - Navigate to the "Sections" or "Subsections" section of the application.
 - Create, edit, or delete sections and subsections as needed.
+
 ###  Assigning Roles
 - Log in as an administrator.
 - Navigate to the "Roles" section of the application.
 - Create author and collaborator roles.
 - Assign these roles to users who need them.
-
- 

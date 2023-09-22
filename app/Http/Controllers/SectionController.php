@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Section;
+use App\Services\SectionService;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
+
 class SectionController extends Controller
 {
     use HasRoles;
+    
+    public function __construct(private SectionService $sectionService)
+    {
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,7 @@ class SectionController extends Controller
      */
     public function index()
     {
-        $sections = Section::with('children')->whereNull('parent_id')->get();
+        $sections = $this->sectionService->getSectionList();
         return view('sections.index', compact('sections'));
     }
 
@@ -26,7 +33,7 @@ class SectionController extends Controller
      */
     public function create()
     {
-        $sections = Section::all(); // Fetch all sections for the dropdown
+        $sections = $this->sectionService->create();
         return view('sections.create', compact('sections'));
     }
 
@@ -38,11 +45,7 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        $section = new Section();
-        $section->title = $request->input('title');
-        $section->parent_id = $request->input('parent_id');
-        $section->save();
-
+        $sections = $this->sectionService->saveSection($request);
         return redirect()->route('sections.index');
     }
 
@@ -65,7 +68,7 @@ class SectionController extends Controller
      */
     public function edit(Section $section)
     {
-        $sections = Section::where('id', '<>', $section->id)->get();
+        $sections = $this->sectionService->editSave($section);
         return view('sections.edit', compact('section', 'sections'));
     }
 
@@ -78,9 +81,7 @@ class SectionController extends Controller
      */
     public function update(Request $request, Section $section)
     {
-        $section->title = $request->input('title');
-        $section->parent_id = $request->input('parent_id'); // Update the parent ID if necessary
-        $section->save();
+        $section = $this->sectionService->editSection($request, $section);
         return redirect()->route('sections.index');
     }
 

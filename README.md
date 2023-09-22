@@ -22,14 +22,14 @@ Before you begin, ensure you have met the following requirements:
 	cd project-name
 	
 3. Install PHP dependencies:
-	composer install
-	npm install
-	cp .env.example .env
-	Configure your database connection in the .env file
-	php artisan key:generate
-	php artisan migrate
-	Run the seeder
-	php artisan serve
+	- composer install
+	- npm install
+	- cp .env.example .env
+	- Configure your database connection in the .env file
+	- php artisan key:generate
+	- php artisan migrate
+	- Run the seeder
+	- php artisan serve
 	
 	The application should now be running. You can access it at http://localhost:8000
 		
